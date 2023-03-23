@@ -1,0 +1,27 @@
+.sidebar {
+    border-right: 0.063rem solid var(--twitter-background);
+    flex: 0.2;
+    height:100vh;
+    /* min-width: 250px; */
+    margin-top: 1rem;
+    /* padding-left: 1.25rem; */
+    padding-right: 1.25rem;
+}
+.sidebarOPtions{
+    height:30rem;
+    justify-content:center;
+}
+@media screen and (max-width:500px){
+    .sidebar{
+        display:none;
+    }
+    .sidetweetBtn{
+        display:none;
+    }
+}
+@media screen and (max-width:1005px){
+    .sidetweetBtn{
+        display:none;
+    }
+}
+

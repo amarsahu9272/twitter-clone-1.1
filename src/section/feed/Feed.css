@@ -1,0 +1,178 @@
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+} */
+.feed {
+    flex: 0.5;
+    border-right: 0.063rem solid var(--twitter-background);
+    /* min-width: fit-content; */
+    /* min-width: 26rem; */
+    overflow-y: scroll;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.feed::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.feed {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.feed__header {
+    position: sticky;
+    /* position: fixed; */
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--twitter-background);
+    /* padding: 15px 20px; */
+}
+
+.feed__header>h2 {
+    font-size: 20px;
+    font-weight: 700;
+    /* padding: 15px 20px; */
+    padding-left: 1rem;
+}
+
+.feed__header>div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.feed__header>div>p {
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    height: 3rem;
+    font-weight: 500;
+}
+
+.feed__header>div>p:hover {
+    background-color: var(--twitter-background);
+    cursor: pointer;
+
+}
+
+/* .avatarfeed{
+    display:none !important;
+}
+.twitterIconfeed {
+    display: none !important;
+} */
+.drawer {
+    z-index: 9999;
+}
+
+.iconsfeed {
+    /* display:none; */
+    /* visibility: hidden; */
+    display: none;
+    z-index: 9999;
+
+}
+
+.tweetBtn {
+    position: fixed;
+    bottom: 14rem;
+    right: 4rem;
+    padding: 20px;
+    font-size: 30px;
+    display: none;
+}
+
+.downIcon {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    font-size: 30px;
+    z-index: 3333;
+    bottom: 0;
+    display: none;
+    /* background:black;
+    color:white; */
+    height: 50px;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.feed__header>div>p {
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    height: 3rem;
+    font-weight: 500;
+}
+
+.feed__header>div>p:hover {
+    background-color: var(--twitter-background);
+    cursor: pointer;
+
+}
+
+@media screen and (max-width:500px) {
+    .feed {
+        max-width: 100%;
+        flex: .99;
+    }
+
+    .tweetBoxfeed {
+        display: none;
+    }
+
+    .hometext {
+        display: none;
+    }
+
+    .iconsfeed {
+        visibility: visible;
+        display: grid;
+        gap: 10rem;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
+    }
+
+    .tweetbox {
+        display: none;
+    }
+
+    .tweetBtn {
+        display: unset;
+        z-index: 99999;
+        cursor: pointer;
+    }
+
+    .downIcon {
+        display: unset;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        font-size: 30px;
+        z-index: 3333;
+        bottom: 0;
+        /* display: none; */
+        /* background:black;
+                color:white; */
+        height: 50px;
+        align-items: center;
+        backdrop-filter: blur(10px);
+    }
+
+}
+
+@media screen and (max-width:1005px) {
+    .feed {
+        max-width: 630px;
+
+    }
+}

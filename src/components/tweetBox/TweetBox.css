@@ -1,0 +1,11 @@
+.tweetBox {
+    padding-bottom: .625rem;
+    /* border-bottom: .5rem solid var(--twitter-background); */
+    padding-right: .625rem;
+}
+
+.tweetBox>form {
+    display: flex;
+    flex-direction: column;
+}
+
