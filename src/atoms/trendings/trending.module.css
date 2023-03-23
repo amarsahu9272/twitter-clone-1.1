@@ -14,7 +14,10 @@
         z-index: 1;
         position: relative;
     }
-
+    .trendingDataText{
+        font-weight: 400;
+        font-size: small;
+    }
 
     .trendingDataText:nth-child(2){
         font-weight: 700;
@@ -23,6 +26,7 @@
         position: absolute;
         right: 1rem;
         cursor: pointer;
+        
     }
     .popOver{
         background: white;

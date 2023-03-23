@@ -38,14 +38,10 @@ function WhoToFollw() {
               variant="outlined"
               btnStyle={!fData.isFollow ? "followButton" : "followingButton"}
             />
-
-            {/* <button onClick={() => handleFollowButton(fData)}>
-              {!fData.isFollow ? "follow" : "Following"}
-            </button> */}
           </div>
         ))}
       </div>
-      <a href="https://twitter.com/nanapatekar9272">Show more</a>
+      <a className="seeMore" href="https://twitter.com/nanapatekar9272">Show more</a>
     </div>
   );
 }

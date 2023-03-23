@@ -9,6 +9,7 @@
     gap: .5rem;
 
 }
+
 .whoToFollwContainer>h2 {
     font-size: 1.125rem;
     font-weight: 800;
@@ -24,20 +25,19 @@
     font-size: small;
     overflow: hidden;
 }
-.follow-p>div:hover{
-background-color: gainsboro;
-cursor: pointer;
-}
-.follow-p>p{
 
-}
+/* .follow-p>div:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+} */
 
 .following {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-a {
+.seeMore {
     text-decoration: none;
-    color: var(--twitter-color)
+    color: var(--twitter-color) !important
 }

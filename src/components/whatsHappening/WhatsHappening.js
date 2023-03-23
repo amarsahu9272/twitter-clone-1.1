@@ -12,17 +12,12 @@ function WhatsHappening() {
     setAnchor(e.currentTarget);
   };
   const handleInterest = (wData) => {
-    // var updatedData= [...whatHappeningData]
-    // console.log( udatedData[i].isNotInterested)
-    // updatedData[i].isNotInterested=true
-    // setWhatHappeningData(updatedData)
     console.log(wData.id);
     const indexOfClickedHappen = whatHappeningData.findIndex(
       (index) => index.id === wData.id
     );
     console.log(indexOfClickedHappen);
     whatHappeningData[indexOfClickedHappen].isNotInterested = true;
-    // !whatHappeningData[indexOfClickedHappen].isNotInterested;
     setWhatHappeningData([...whatHappeningData]);
     setUserIntersted(false);
     setAnchor(null);
