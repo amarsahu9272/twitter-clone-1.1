@@ -42,13 +42,6 @@
 
 
 
-
-
-
-
-
-
-
 .post {
     display: flex;
     align-items: flex-start;
@@ -227,5 +220,15 @@
 .profilePage__header>div>p:hover {
     background-color: var(--twitter-background);
     cursor: pointer;
+
+}
+
+/* ======================================================= */
+
+@media screen and (max-width:500px) {
+    .profilePage {
+        max-width: 100%;
+        flex: .99;
+    }
 
 }

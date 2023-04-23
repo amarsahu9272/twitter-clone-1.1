@@ -1,29 +1,36 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
 import { sideBarIcons } from "../../const";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import { Link, useNavigate } from 'react-router-dom';
-export default function TemporaryDrawer({ profile}) {
+import { Link, useNavigate } from "react-router-dom";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+export default function TemporaryDrawer({ profile }) {
+  const handleLogout = () => {
+    console.log("logged out");
+    localStorage.setItem("loggedInUser", null);
+    navigate("/signin");
+  };
+
   const [state, setState] = React.useState({
     left: false,
   });
-  const navigate=useNavigate();
-  function handleOptionClick(id){
-    if(id===1){
+  const navigate = useNavigate();
+  function handleOptionClick(id) {
+    if (id === 1) {
       navigate(`/${profile.handlerName}`);
     }
   }
-  
-const icons = [
-  { id: 1, Icon: PermIdentityIcon,text:"Profile" },
-  { id: 2, Icon: ListAltIcon ,text:"List"},
-  { id: 3, Icon: BookmarkBorderIcon,text:"Bookmark" },
-];
+
+  const icons = [
+    { id: 1, Icon: PermIdentityIcon, text: "Profile" },
+    { id: 2, Icon: ListAltIcon, text: "List" },
+    { id: 3, Icon: BookmarkBorderIcon, text: "Bookmark" },
+  ];
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -57,7 +64,6 @@ const icons = [
         <h2 onClick={toggleDrawer(anchor, false)}>X</h2>
       </div>
 
-
       <div
         style={{
           display: "flex",
@@ -66,10 +72,12 @@ const icons = [
           marginBottom: ".8rem",
         }}
       >
-        <Link to={`/${profile.handlerName}`}><Avatar
-          src={profile.profilePic}
-          style={{ fontSize: "90px", width: "50px", height: "50px" }}
-        /></Link>
+        <Link to={`/${profile.handlerName}`}>
+          <Avatar
+            src={profile.profilePic}
+            style={{ fontSize: "90px", width: "50px", height: "50px" }}
+          />
+        </Link>
         <h2
           style={{
             display: "flex",
@@ -84,7 +92,6 @@ const icons = [
           +
         </h2>
       </div>
-
 
       <div style={{ marginLeft: "20px", marginBottom: "15px" }}>
         <h2>{profile.name}</h2>
@@ -121,6 +128,25 @@ const icons = [
           <h1>{el.text}</h1>
         </div>
       ))}
+      <button
+        onClick={handleLogout}
+        style={{
+          alignSelf: "end",
+          fontWeight: "bold",
+          fontSize: "30px",
+          marginTop: "420px",
+          marginLeft: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "5px",
+          width: "200px",
+          padding: "4px",
+        }}
+      >
+        Logout
+        <ExitToAppIcon />
+      </button>
     </Box>
   );
 
@@ -129,7 +155,7 @@ const icons = [
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <Avatar src={profile.profilePic}/>
+            <Avatar src={profile.profilePic} />
           </Button>
           <Drawer
             anchor={anchor}
