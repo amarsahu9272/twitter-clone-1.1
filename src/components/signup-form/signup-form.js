@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function SignupForm() {
   const [name, setName] = useState("");
@@ -30,6 +31,7 @@ export default function SignupForm() {
   const [userRegistered, setUserRegistered] = useState(false);
   const nevigate = useNavigate();
   const [users, setUsers] = useState([]);
+  const matches = useMediaQuery("(min-width:660px)");
 
   function handleName(inputName) {
     setName(inputName);
@@ -125,7 +127,7 @@ export default function SignupForm() {
       // console.log(users);
       nevigate("/signin");
     }
-  }, [userRegistered,nevigate]);
+  }, [userRegistered, nevigate]);
 
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("userList")) || [];
@@ -142,6 +144,12 @@ export default function SignupForm() {
         PaperProps={{
           style: {
             borderRadius: 20,
+            boxShadow: matches ? "4px 4px 20px rgba(0,0,0,0.25" : "none",
+          },
+        }}
+        BackdropProps={{
+          style: {
+            backgroundColor: matches ? "gray" : "white",
           },
         }}
       >

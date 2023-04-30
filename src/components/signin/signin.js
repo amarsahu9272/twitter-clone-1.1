@@ -1,24 +1,19 @@
-
 import style from "./signin.module.css";
-
 import { SigningTemplate } from "../../templates/signing-template/signing-template";
 import CustomInputField from "../../atoms/custom-input/custom-input";
 import CustomButton from "../../atoms/customButton/custom-button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { totalTweets, loggedUserData } from "../../recoil-states";
-// import { useRecoilState, useRecoilValue } from "recoil";
 import { useEffect } from "react";
 
 export default function SignInComponent() {
- 
   const [signInInput, setSignInInput] = useState(""); //it will contain email or phone input data.
   const [password, setPassword] = useState("");
   //   this is for the after clicking on next button open password input box
   const [isAskingPassword, setIsAskingPassword] = useState(false);
   //   This is for the savign data and then navigat to home page using useEffect
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [users,setUsers]=useState([]);
+  const [users, setUsers] = useState([]);
   const nevigate = useNavigate();
 
   const handleSignInInput = (inputVal) => {
@@ -62,7 +57,7 @@ export default function SignInComponent() {
         return;
       }
     }
-    
+
     localStorage.setItem(
       "loggedInUser",
       JSON.stringify({ ...users[index], index })
@@ -73,12 +68,12 @@ export default function SignInComponent() {
     if (userLoggedIn) {
       nevigate("/");
     }
-  }, [userLoggedIn,nevigate]);
-  
-   useEffect(()=>{
-     let data=JSON.parse(localStorage.getItem("userList"));
-     data&&setUsers(data);
-   },[])
+  }, [userLoggedIn, nevigate]);
+
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("userList"));
+    data && setUsers(data);
+  }, []);
   return (
     <SigningTemplate isSignInPage>
       {!isAskingPassword && (

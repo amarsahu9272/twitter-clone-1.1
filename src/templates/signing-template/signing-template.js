@@ -35,7 +35,6 @@ export function SigningTemplate({ children, isSignInPage }) {
   return (
     <Dialog
       open
-      
       PaperProps={{
         style: {
           borderRadius: 20,
@@ -48,7 +47,6 @@ export function SigningTemplate({ children, isSignInPage }) {
         },
       }}
     >
-    {/* <div className={style.container}> */}
       <div className={style.wrapper}>
         <div className={style.twitterIconWrapper}>
           <TwitterIcon
