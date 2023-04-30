@@ -4,34 +4,37 @@ import Post from "../../components/post/Post";
 import TweetBox from "../../components/tweetBox/TweetBox";
 import { nanoid } from "nanoid";
 import useAddTweet from "../../utils/useAddTweet";
-import { Avatar } from "@mui/material";
 import TwitterIconn from "../../atoms/twitterIconn/TwitterIconn";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import Drawer from "./Drawer"
+import Drawer from "./Drawer";
 import { useNavigate } from "react-router-dom";
-
-
+import floatTwit from "../../images/floatTwit.jpg";
 function Feed() {
-    const icons = [{id:1,Icons:HomeIcon}, {id:2,Icons:SearchIcon}, {id:3,Icons:NotificationsNoneIcon}, {id:4,Icons:MailOutlineIcon}];
-  const navigate=useNavigate();
+  const icons = [
+    { id: 1, Icons: HomeIcon },
+    { id: 2, Icons: SearchIcon },
+    { id: 3, Icons: NotificationsNoneIcon },
+    { id: 4, Icons: MailOutlineIcon },
+  ];
+  const navigate = useNavigate();
   const [profile, setProfile] = useState("");
-  const [selectedFile,setSelectedFile]=useState("");
-  const [tweetMessage, setTweetMessage, handleTweetBtnClick, tweetList] = useAddTweet(selectedFile, setSelectedFile);
+  const [selectedFile, setSelectedFile] = useState("");
+  const [tweetMessage, setTweetMessage, handleTweetBtnClick, tweetList] =
+    useAddTweet(selectedFile, setSelectedFile);
   useEffect(() => {
     let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
     setProfile(loggedInUser);
   }, [tweetMessage]);
 
-function handleclick(){
-  navigate("/compose/tweet");
-}
-function handleClickdownIcon(id){
- if(id===1) navigate("/");
-}
+  function handleclick() {
+    navigate("/compose/tweet");
+  }
+  function handleClickdownIcon(id) {
+    if (id === 1) navigate("/");
+  }
   return (
     <div className="feed">
       <div className="feed__header">
@@ -47,12 +50,8 @@ function handleClickdownIcon(id){
           <p>Following</p>
         </div>
       </div>
-      <button
-        className="tweetBtn"
-        onClick={handleclick}
-        style={{ background: "lightblue", color: "white" }}
-      >
-        +
+      <button className="tweetBtn" onClick={handleclick}>
+        <img className="floatTwit" src={floatTwit} alt="floatTwit" />
       </button>
       <div className="downIcon">
         {icons.map((el) => (

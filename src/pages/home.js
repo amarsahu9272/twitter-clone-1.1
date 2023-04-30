@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-// import { useRecoilValue } from "recoil";
-// import { isUserLoggedInAtom, loggedUserData } from "../recoil-states";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
 
 export default function HomePage() {
-  // const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom);
-  // const profile = useRecoilValue(loggedUserData);
   const [profile,setProfile]=useState("");
   const nevigate = useNavigate();
      useEffect(()=>{

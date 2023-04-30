@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ProfilePost.css";
-
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import RepeatIcon from "@mui/icons-material/Repeat";
@@ -8,9 +7,6 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PublishIcon from "@mui/icons-material/Publish";
 import { Avatar } from "@mui/material";
-import { useSetRecoilState } from "recoil";
-import { profileDataAtom } from "../../recoil-states";
-import { Link } from "react-router-dom";
 function ProfilePost({ post, profiledata }) {
   const { profilePic, name, verified, handlerName, joinedDate } = profiledata;
   console.log(post.tweetPic);
