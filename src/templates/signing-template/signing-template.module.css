@@ -76,6 +76,7 @@
     .wrapper {
         padding: 2rem;
         gap: .9rem;
+        border: none;
     }
 
     .heading {

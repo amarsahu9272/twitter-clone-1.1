@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
-import { sideBarIcons } from "../../const";
+// import { sideBarIcons } from "../../const";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
@@ -134,7 +134,7 @@ export default function TemporaryDrawer({ profile }) {
           alignSelf: "end",
           fontWeight: "bold",
           fontSize: "30px",
-          marginTop: "420px",
+          marginTop: "350px",
           marginLeft: "20px",
           display: "flex",
           alignItems: "center",
