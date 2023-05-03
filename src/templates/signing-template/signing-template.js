@@ -38,7 +38,8 @@ export function SigningTemplate({ children, isSignInPage }) {
       PaperProps={{
         style: {
           borderRadius: 20,
-          boxShadow: matches ? "4px 4px 20px rgba(0,0,0,0.25" : "none",
+          boxShadow: matches ? "4px 4px 20px rgba(0,0,0,0.25)" : "none",
+          // border: matches ? "1px solid black" : "none",
         },
       }}
       BackdropProps={{
